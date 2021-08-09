@@ -1,5 +1,9 @@
 # Test Build Definition
 
+# TODO
+# - Rename test targets
+# - Add test files to the bulid
+
 PROJECT_test_files = files(
 	'main.c',
 	'test_suite.c',

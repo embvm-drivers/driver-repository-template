@@ -1,4 +1,4 @@
-project('PROJECT_NAME',
+project('embvm-driver-template',
 	['c', 'cpp'],
 	default_options : [
 		'warning_level=3',
@@ -11,8 +11,8 @@ project('PROJECT_NAME',
 		'c_std=c11', 'build.c_std=c11',
 		'cpp_std=c++17', 'build.cpp_std=c++17',
 	],
-	meson_version: '>=0.54.0',
-	version: '0.1'
+	meson_version: '>=0.56.0',
+	version: '0.9'
 )
 
 ################################
@@ -41,10 +41,12 @@ endif
 
 if get_option('disable-rtti')
 	desired_cpp_compile_flags += '-fno-rtti'
+	desired_native_cpp_compile_flags += '-fno-rtti'
 endif
 
 if get_option('disable-exceptions')
 	desired_cpp_compile_flags += ['-fno-exceptions', '-fno-unwind-tables']
+	desired_native_cpp_compile_flags += ['-fno-exceptions', '-fno-unwind-tables']
 endif
 
 if get_option('enable-pedantic')
@@ -56,6 +58,9 @@ endif
 if get_option('enable-pedantic-error')
 	desired_common_compile_flags += '-pedantic-error'
 endif
+
+# Silence the warning when -nostdinc and -nostdinc++ are specified together
+desired_common_compile_flags += ['-Wno-unused-command-line-argument']
 
 compile_settings_list = [
 	{'lang': 'c', 'compiler': host_c_compiler, 'flags': desired_c_compile_flags, 'isnative': false},
@@ -88,13 +93,12 @@ subdir('build/objcopy')
 # Subprojects #
 ###############
 
-libmemory_subproject = subproject('libmemory')
-etl_subproject = subproject('etl')
+embvm_core_subproject = subproject('embvm-core')
 
-libmemory_freelist_dep = libmemory_subproject.get_variable('libmemory_freelist_dep')
-etl_dep = etl_subproject.get_variable('etl_dep')
+framework_include_dep = embvm_core_subproject.get_variable('framework_include_dep')
+framework_host_include_dep = embvm_core_subproject.get_variable('framework_host_include_dep')
+framework_native_include_dep = embvm_core_subproject.get_variable('framework_native_include_dep')
 
-# Configure the project to include `libc` headers by default
 #######################
 # Process Source Tree #
 #######################
@@ -104,6 +108,7 @@ clangtidy_files = []
 # Add dependencies to this array for testing with Catch2
 catch2_tests_dep = []
 
+# TODO: update the following trees!
 subdir('src')
 subdir('test')
 

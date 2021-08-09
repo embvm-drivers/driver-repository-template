@@ -1,4 +1,4 @@
-# Project Title
+# Driver Repository Template
 
 Provide an introductory paragraph, describing:
 
@@ -278,7 +278,7 @@ If you are interested in contributing to this project, please read our [contribu
 
 ## License
 
-Copyright © 2020 Embedded Artistry LLC
+Copyright © 2021 Embedded Artistry LLC
 
 See the [LICENSE](LICENSE) file for licensing details.
 
