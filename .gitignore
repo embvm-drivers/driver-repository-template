@@ -5,8 +5,22 @@
 *.sublime-workspace
 
 # Meson subprojects
-**/subprojects/**
-!**/subprojects/*.wrap
+subprojects/**
+!subprojects/*.wrap
+!subprojects/packagefiles/
+!subprojects/packagefiles/*.tgz
+!subprojects/packagefiles/*.zip
+!subprojects/packagefiles/**/
+!subprojects/packagefiles/**/meson.build
+
+###############################
+# Ignore Forwarded Wrap Files #
+###############################
+
+subprojects/compiler-rt.wrap
+subprojects/etl.wrap
+subprojects/libmemory.wrap
+subprojects/gsl-lite.wrap
 
 ########################
 # C / C++ Ignore Rules #
