@@ -1,0 +1,1 @@
+Created initial driver template skeleton as a response to writing a driver for the SPS-30 - I realized I could probably have a much easier starting point if I used a suitable template repo rather than initializing projects using my startup script and making repeated adjustments for embvm support.
