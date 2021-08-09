@@ -6,6 +6,8 @@ Provide an introductory paragraph, describing:
 * Why people should consider using your project
 * Link to project home page
 
+Search the `meson.build` files for `TODO` comments that you need to handle when adjusting this template for your project.
+
 ## Table of Contents
 
 1. [About the Project](#about-the-project)
