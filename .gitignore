@@ -18,7 +18,6 @@ subprojects/**
 ###############################
 
 subprojects/compiler-rt.wrap
-subprojects/etl.wrap
 subprojects/libmemory.wrap
 subprojects/gsl-lite.wrap
 
