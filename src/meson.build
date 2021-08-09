@@ -7,4 +7,4 @@
 
 subdir('vendor')
 subdir('driver')
-subdir('app')
+subdir('example-app')

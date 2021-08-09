@@ -1,15 +1,15 @@
 
 driver_lib_inc = [
-	meson.current_source_dir()
+	include_directories('.'),
 ]
 
 driver_lib = static_library('driver',
-    'example.c',
+    'driver.cpp',
     build_by_default: false,
 )
 
 driver_lib_native = static_library('driver_native',
-    'example.c',
+    'driver.cpp',
     build_by_default: false,
     native: true
 )

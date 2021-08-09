@@ -93,11 +93,11 @@ subdir('build/objcopy')
 # Subprojects #
 ###############
 
-embvm_core_subproject = subproject('embvm-core')
-
-framework_include_dep = embvm_core_subproject.get_variable('framework_include_dep')
-framework_host_include_dep = embvm_core_subproject.get_variable('framework_host_include_dep')
-framework_native_include_dep = embvm_core_subproject.get_variable('framework_native_include_dep')
+# TODO: Uncomment if you want to use the embvm-core constructs in this implementation
+#embvm_core_subproject = subproject('embvm-core')
+#framework_include_dep = embvm_core_subproject.get_variable('framework_include_dep')
+#framework_host_include_dep = embvm_core_subproject.get_variable('framework_host_include_dep')
+#framework_native_include_dep = embvm_core_subproject.get_variable('framework_native_include_dep')
 
 #######################
 # Process Source Tree #
